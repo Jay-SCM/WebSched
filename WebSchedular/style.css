@@ -1,0 +1,118 @@
+* {
+    margin: 0;  /* Reset the margin */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Import the font */
+}
+.container {
+    width: 100%;
+    min-height: 100vh;  /* Set the height to 100% of the viewport */
+    background: linear-gradient(90deg, #240f3a, #0b0c01); /* Updated gradient */
+    display: flex;
+    justify-content: center;    /* Center the content */
+    align-items: center;
+}
+.todo-app {
+    width: 100%;
+    max-width: 600px;   /* Updated max-width */
+    background: #fff;   /* Updated background */
+    margin: 20px auto;  /* Updated margin */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);    /* Add a shadow */
+}
+.todo-app h2 {
+    color: #333;
+    font-size: 24px;    /* Updated font-size */
+    margin-bottom: 20px;    /* Add some space between the heading and the input */
+}
+.todo-app h2 img {
+    width: 24px;    /* Set the width */
+    margin-left: 10px;  /* Add some space between the heading and the input */
+}
+.row {
+    display: flex;  /* Updated display property */
+    align-items: center;    /* Center the content */
+    justify-content: space-between;
+    background: #f2f2f2;
+    border-radius: 10px;    /* Add a border radius */
+    padding: 10px;  /* Add some padding */
+    margin-bottom: 10px;    /* Add some space between the rows */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);   /* Add a shadow */
+}
+input {
+    flex: 1;    /* Take the remaining width */
+    border: none;
+    outline: none;  /* Remove the outline */
+    background: transparent;    /* Make the background transparent */
+    padding: 10px;
+    font-size: 16px;
+}
+button {
+    border: none;   /* Remove the border */
+    outline: none;
+    background: #ff5945;    /* Set the background color */
+    padding: 10px 20px;
+    color: white;   /* Set the text color to white */
+    cursor: pointer;    /* Add a pointer on hover */
+    font-size: 16px;    /* Set the font size */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Add a transition */
+}
+button:hover {
+    background: #ff3a2f;    /* Change the background color on hover */
+}
+ul {
+    list-style: none;   /* Remove the default list style */
+    padding: 0;
+}
+ul li {
+    font-size: 18px;    /* Set the font size */
+    background: #fff;
+    padding: 15px;  /* Add some padding */
+    user-select: none;
+    cursor: pointer;    /* Add a pointer on hover */
+    position: relative; /* Add position relative */
+    border-radius: 5px; /* Add a border radius */
+    transition: background-color 0.3s ease; /* Add a transition */
+    margin-bottom: 5px;
+}
+ul li::before {
+    content: '';    /* Add the content */
+    position: absolute; /* Add position absolute */
+    width: 18px;    /* Set the width */
+    height: 18px;
+    border-radius: 50%;   /* Make it a circle */
+    background-image: url("images/checked.png");    /* Add the image */
+    background-size: cover;
+    background-position: center;
+    left: -5px; /* Move the checkbox to the left */
+    top: 50%;
+    transform: translateY(-50%);    /* Center the checkbox */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+/* Add the text-decoration for checked items */
+ul li.checked {
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    opacity: 1;
+}
+ul li span {
+    position: absolute;
+    right: 10px; /* Move the delete icon to the right */
+    top: 50%;
+    transform: translateY(-50%);    /* Center the delete icon */
+    color: #666;
+    font-size: 20px;    /* Set the font size */
+    cursor: pointer;    /* Add a pointer on hover */
+    opacity: 0;
+    transition: opacity 0.3s ease;  /* Add a transition */
+}
+ul li:hover {
+    background: #f8f8f8;    /* Change the background color on hover */
+}
+ul li:hover span {
+    opacity: 1; /* Show the delete icon on hover */
+}
